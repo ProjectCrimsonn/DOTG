@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">DOTG</string>
+    <string name="log_in">LOG IN</string>
+    <string name="facebook">Facebook</string>
+    <string name="twitter">Twitter</string>
+    <string name="don_t_have_an_account">DON\'T HAVE AN ACCOUNT?</string>
+    <string name="or_sign_in_with">OR SIGN IN WITH</string>
+    <string name="sign_up_here">SIGN UP HERE</string>
+    <string name="google">Google</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="or_sign_up_with">OR SIGN UP WITH</string>
+    <string name="log_in_here">LOG IN HERE</string>
+    <string name="enter_your_blood_group_here">Enter your blood group here</string>
+    <string name="already_have_an_account">ALREADY HAVE AN ACCOUNT?</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="sign_up">SIGN UP</string>
 </resources>
