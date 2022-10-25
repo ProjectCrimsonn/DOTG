@@ -46,6 +46,7 @@ class login : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // Sign in success
+                    // If sign in fails, display a message to the user.
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
 
@@ -54,17 +55,17 @@ class login : AppCompatActivity() {
                         Toast.LENGTH_SHORT
                     ).show()
                 } else {
-                    // If sign in fails, display a message to the user.
-                    Toast.makeText(baseContext, "Authentication failed.",
-                        Toast.LENGTH_SHORT).show()
-
+                    Toast.makeText(
+                        baseContext, "Authentication failed.",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
-            .addOnFailureListener{
-                Toast.makeText(baseContext, "Authentication failed. ${it.localizedMessage}",
-                    Toast.LENGTH_SHORT).show()
+            .addOnFailureListener {
+                Toast.makeText(this, "Error occured ${it.localizedMessage}",
+                    Toast.LENGTH_SHORT)
+                    .show()
             }
-    }
-
 
     }
+}

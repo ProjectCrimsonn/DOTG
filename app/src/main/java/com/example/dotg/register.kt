@@ -24,9 +24,9 @@ class register : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+        val registerbutton:Button = findViewById(R.id.login_button)
 
-        val loginButton: Button = findViewById(R.id.login_button)
-        loginButton.setOnClickListener{
+        registerbutton.setOnClickListener {
             performSignUp()
         }
 
@@ -51,8 +51,7 @@ class register : AppCompatActivity() {
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
 
-                    Toast.makeText(
-                        baseContext, "Success.",
+                    Toast.makeText(baseContext, "Success.",
                         Toast.LENGTH_SHORT
                     ).show()
 
@@ -64,7 +63,8 @@ class register : AppCompatActivity() {
                 }
             }
             .addOnFailureListener{
-                Toast.makeText(this,"Error occured ${it.localizedMessage}",Toast.LENGTH_SHORT)
+                Toast.makeText(this,"Error occured ${it.localizedMessage}",
+                    Toast.LENGTH_SHORT)
                     .show()
             }
     }
