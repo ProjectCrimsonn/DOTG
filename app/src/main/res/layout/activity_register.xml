@@ -160,7 +160,6 @@
                     android:fontFamily="@font/barlow_condensed_medium"
                     android:gravity="center"
                     android:text="@string/google"
-                    android:textColor="#D32F2F"
                     tools:ignore="TextContrastCheck" />
             </com.google.android.material.card.MaterialCardView>
             <com.google.android.material.card.MaterialCardView
