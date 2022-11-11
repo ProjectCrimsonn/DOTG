@@ -16,6 +16,13 @@
     <style name="all_text" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:textViewStyle">@style/text_font</item>
     </style>
+    <style name="dark_background" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="cardBackgroundColor">@color/theme_black</item>
+        <item name="android:textColor">@color/theme_grey</item>
+    </style>
+    <style name="light_text" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:textColor">@color/theme_black</item>
+    </style>
 
     <style name="text_font" parent="android:Widget.TextView">
         <item name="fontFamily">@font/barlow_condensed_medium</item>
