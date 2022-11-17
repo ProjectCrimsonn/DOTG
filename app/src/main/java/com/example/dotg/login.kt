@@ -3,6 +3,7 @@ package com.example.dotg
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -27,49 +28,68 @@ class login : AppCompatActivity() {
         }
         val loginButton: Button = findViewById(R.id.login_button)
         loginButton.setOnClickListener {
-//            performLogin()
-            val intent = Intent(this@login, landing::class.java)
-            startActivity(intent)
-            finish()
+            performLogin()
+//            val intent = Intent(this@login, landing::class.java)
+//            startActivity(intent)
+//            finish()
 
         }
     }
+
     private fun performLogin() {
         val email: EditText = findViewById(R.id.login_email)
         val password: EditText = findViewById(R.id.login_password)
 
-        if (email.text.isEmpty() || password.text.isEmpty()) {
-            Toast.makeText(this, "Please fill all the fields", Toast.LENGTH_SHORT)
-                .show()
-            return
+
+        val emailInput = email.text.toString().trim { it <= ' ' }
+        val passwordInput = password.text.toString().trim { it <= ' ' }
+
+        when {
+            TextUtils.isEmpty(email.text.toString().trim { it <= ' ' }) -> {
+                Toast.makeText(
+                    this,
+                    "Enter Email to log in",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+
+            TextUtils.isEmpty(password.text.toString().trim { it <= ' ' }) -> {
+                Toast.makeText(
+                    this,
+                    "Enter Password to log in",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+
+            else -> {
+                FirebaseAuth.getInstance().signInWithEmailAndPassword(emailInput, passwordInput)
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            Toast.makeText(
+                                this,
+                                "Login successful.",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                            val intent = Intent(this, landing::class.java)
+
+                            intent.flags =
+                                Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                            intent.putExtra("user_email", emailInput)
+                            startActivity(intent)
+                            finish()
+                        }else{
+                            Toast.makeText(
+                                this,
+                                task.exception!!.message.toString(),
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+
+
+                    }
+            }
         }
-        val emailInput = email.text.toString()
-        val passwordInput = password.text.toString()
 
-        auth.createUserWithEmailAndPassword(emailInput, passwordInput)
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    // Sign in success
-                    // If sign in fails, display a message to the user.
-                    val intent = Intent(this, MainActivity::class.java)
-                    startActivity(intent)
-
-                    Toast.makeText(
-                        baseContext, "Success.",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                } else {
-                    Toast.makeText(
-                        baseContext, "Authentication failed.",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-            }
-            .addOnFailureListener {
-                Toast.makeText(this, "Error occured ${it.localizedMessage}",
-                    Toast.LENGTH_SHORT)
-                    .show()
-            }
 
     }
 }
