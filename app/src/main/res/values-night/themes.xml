@@ -20,4 +20,11 @@
     <style name="light_text" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:textColor">@color/secondary_grey</item>
     </style>
+    <style name="dark_text" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:textColor">@color/theme_black</item>
+    </style>
+    <style name="alternate_background" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:background">@color/theme_grey</item>
+    </style>
+
 </resources>

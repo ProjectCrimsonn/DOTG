@@ -43,10 +43,10 @@
                 android:textSize="16sp" />
 
             <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
-                android:clickable="true"
                 app:cardCornerRadius="5dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -106,6 +106,7 @@
                         app:layout_constraintVertical_bias="1.0">
 
                         <ImageButton
+
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:backgroundTint="@color/purple_500"
@@ -228,6 +229,7 @@
                         app:layout_constraintVertical_bias="1.0">
 
                         <ImageButton
+                            android:id="@+id/plans_btn"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:backgroundTint="@color/purple_500"
@@ -311,7 +313,7 @@
                         android:layout_width="229dp"
                         android:layout_height="65dp"
                         android:paddingHorizontal="10dp"
-                        android:text="SAEV A LIFE DRIVE DONATION 2022"
+                        android:text="SAVE A LIFE DRIVE DONATION 2022"
                         style="@style/light_text"
                         android:textSize="25sp"
                         app:layout_constraintBottom_toTopOf="@+id/textView_3"

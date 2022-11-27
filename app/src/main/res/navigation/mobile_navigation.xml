@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/landing">
+    <activity
+        android:id="@+id/landing"
+        android:name="com.example.dotg.landing"
+        android:label="activity_landing"
+        tools:layout="@layout/activity_landing" />
+</navigation>

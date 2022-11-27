@@ -15,8 +15,8 @@ class ViewPagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapte
 
     private val frags = arrayListOf(
         //this one stores the fragments you want  to be output in the viewpager in an array list
-        news_fragment(),
         events_fragment(),
+        news_fragment(),
         planned_fragment()
     )
 

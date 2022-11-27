@@ -7,117 +7,115 @@
     tools:context=".fragments.planned_fragment">
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="15dp">
 
-        <ImageView
-            android:id="@+id/imageView2"
+        <TextView
+            android:id="@+id/header_notifications"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="Notifications"
+            style="@style/light_text"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/orange_line"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_gravity="center"
+            android:layout_marginVertical="5dp"
+            android:layout_below="@id/header_notifications"
+            android:background="@color/primary_orange" />
+
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:alpha="0.5"
-            android:scaleType="centerCrop"
-            android:src="@drawable/drac"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
+            android:layout_below="@id/orange_line">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:paddingHorizontal="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/imageView2">
-
+            android:orientation="vertical">
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:alpha="0.8"
-                android:clickable="true"
-                app:cardBackgroundColor="@color/theme_black"
-                app:cardCornerRadius="5dp">
+                android:backgroundTint="@color/theme_grey"
+                app:cardCornerRadius="5dp"
+                >
 
                 <LinearLayout
-                    android:id="@+id/card_details"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:paddingVertical="20dp"
-                    app:layout_constraintTop_toTopOf="parent">
+                    android:orientation="horizontal"
+                    android:weightSum="4">
 
-                    <TextView
-                        android:layout_width="match_parent"
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.7"
+                        android:padding="5dp"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/normal_message"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/invitation" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="15dp"
-                        android:text="COUNT DRACULA FUNDRAISER"
-                        android:textColor="@color/white"
-                        android:textSize="25sp" />
+                        android:layout_margin="10dp"
+                        android:layout_weight="3.3"
+                        android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="200dp"
-                        android:layout_height="3dp"
-                        android:layout_gravity="start"
-                        android:layout_marginHorizontal="16dp"
-                        android:layout_marginVertical="5dp"
-                        android:background="@color/primary_orange" />
+                        <TextView
+                            style="@style/light_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="KAMAU has sent you an invite to a blood drive" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="16dp"
-                        android:layout_marginVertical="5dp"
-                        android:text="Come donate blood to be stored in non-aging reserves for future use in case of emergency. "
-                        android:textColor="@color/white" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="16dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginBottom="10dp"
-                        android:gravity="right"
-                        android:text="12:00 P.M"
-                        android:textColor="@color/theme_grey"
-                        android:textSize="15sp" />
+                            <com.google.android.material.button.MaterialButton
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginEnd="5dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="@color/primary_orange"
+                                android:fontFamily="@font/barlow_condensed_medium"
+                                android:text="Ok, I accept" />
+
+                            <com.google.android.material.button.MaterialButton
+                                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginEnd="5dp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/barlow_condensed_medium"
+                                android:text="I decline"
+                                android:textColor="@color/theme_black"
+                                app:strokeColor="@color/theme_black" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
                 </LinearLayout>
-
             </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="200dp">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/maps" />
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="61 will attend"
-                android:layout_marginVertical="20dp"/>
-
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="CANCEL PLANS"
-                android:backgroundTint="@color/primary_orange"
-                style="@style/light_text"
-                />
-
-
         </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </RelativeLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

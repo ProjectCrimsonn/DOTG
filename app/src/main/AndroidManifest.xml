@@ -12,6 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/all_text"
         tools:targetApi="31">
+
+        <activity
+            android:name=".planned"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".landing"
             android:exported="false">
